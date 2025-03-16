@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # 追加
     'rest_framework',
     'django_filters',
-    'backend_app',
+    'backend_api',
     'corsheaders',
 ]
 
@@ -94,9 +94,9 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'testdatabase',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
+        'NAME': 'tune_tracker_v2025',
+        'USER': 'tune_user0316',
+        'PASSWORD': config('DATABASE_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '3306',
     }

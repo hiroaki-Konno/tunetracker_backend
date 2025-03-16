@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backend_app', '0001_initial'),
+        ('backend_api', '0001_initial'),
     ]
 
     operations = [
@@ -47,13 +47,13 @@ class Migration(migrations.Migration):
                 ('upload_date', models.DateField()),
                 ('description', models.TextField()),
                 ('tags', models.CharField(max_length=255)),
-                ('score', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend_app.score')),
+                ('score', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend_api.score')),
             ],
         ),
         migrations.AddField(
             model_name='score',
             name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend_app.user'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend_api.user'),
         ),
         migrations.CreateModel(
             name='GoogleAuth',
@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
                 ('access_token', models.CharField(max_length=255)),
                 ('refresh_token', models.CharField(max_length=255)),
                 ('token_expiry', models.DateTimeField()),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend_app.user')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backend_api.user')),
             ],
         ),
     ]

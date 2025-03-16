@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-# from backend_app.views import YourModelViewSet
+# from backend_api.views import YourModelViewSet
 
 
 router = routers.DefaultRouter()
@@ -25,6 +25,6 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/', include(router.urls)),
-    path('api/', include('backend_app.urls')),
+    path('api/', include('backend_api.urls')),
 ]
 
