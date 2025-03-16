@@ -25,6 +25,9 @@ class YourModelRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIVie
     """
     queryset = YourModel.objects.all()
     serializer_class = YourModelSerializer
+    # lookup_field = 'id'  # URL引数と一致するフィールド名を指定
+    # primary keyのフィールド作ってないからまともに動かん
+
 
 class UserListCreateAPIView(generics.ListCreateAPIView):
     """
@@ -39,6 +42,7 @@ class UserRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    lookup_field = 'user_id'  # URL引数と一致するフィールド名を指定
 
 class GoogleAuthListCreateAPIView(generics.ListCreateAPIView):
     """
@@ -53,6 +57,8 @@ class GoogleAuthRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIVi
     """
     queryset = GoogleAuth.objects.all()
     serializer_class = GoogleAuthSerializer
+    lookup_field = 'auth_id'  # URL引数と一致するフィールド名を指定
+
 
 class ScoreListCreateAPIView(generics.ListCreateAPIView):
     """
@@ -69,6 +75,8 @@ class ScoreRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = Score.objects.all()
     serializer_class = ScoreSerializer
+    lookup_field = 'score_id'  # URL引数と一致するフィールド名を指定
+
 
 class ScoreMetadataListCreateAPIView(generics.ListCreateAPIView):
     """
@@ -83,3 +91,5 @@ class ScoreMetadataRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAP
     """
     queryset = ScoreMetadata.objects.all()
     serializer_class = ScoreMetadataSerializer
+    lookup_field = 'metadata_id'  # URL引数と一致するフィールド名を指定
+

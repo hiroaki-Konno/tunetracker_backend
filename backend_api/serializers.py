@@ -46,7 +46,7 @@ class ScoreSerializer(serializers.ModelSerializer):
     属性:
         scoremetadata_set (ScoreMetadataSerializer): ScoreMetadataのネストされたシリアライザー、読み取り専用。
     """
-    scoremetadata_set = ScoreMetadataSerializer(many=True, read_only=True)
+    metadata  = ScoreMetadataSerializer(read_only=True)
 
     class Meta:
         model = Score
